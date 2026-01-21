@@ -77,3 +77,7 @@ body {
 .grid {
     display: grid;
 }
+
+.list {
+    justify-content: space-evenly
+    }
