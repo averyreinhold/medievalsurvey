@@ -54,8 +54,14 @@
 <div><img src="resources/scroll.png"></div>
 <div><img src="resources/scroll.png"></div>
 </div>
+
+<div class="grid">
+
+</div>
+</body>
 <script>
-    var SPREADSHEET_ID = "1Q8wSVNJETN-g3sM0zTSjXeXPBdM4nZuILPuSsnTuTJ4"; //<-- put spreadsheet ID from URL here
+
+    var SPREADSHEET_ID = "1eP_tLqVJM-TC4T7fHyqZfg4qVa3XoMpZtlfBlIfTY8Q"; //<-- put spreadsheet ID from URL here
     var TAB_NAME = "Sheet1"; // Make sure it has the correct sheet name from bottom of webpage
 
 
@@ -70,8 +76,8 @@ $(document).ready(function () {
       console.log(entry);
       //replace header1, header2, etc. with the column names from your google sheet
       $(`<section> 
-            <p>` + entry.plagueinfestedrats + `</p>
-            <p>` + entry.punishking + `</p>
+            <p>` + first + `</p>
+            <p>` + last + `</p>
             <p>` + entry.pillagingvikings + `</p>
             <p>` + entry.faminefood + `</p>
             <p>` + entry.revoltleader + `</p>
@@ -82,4 +88,4 @@ $(document).ready(function () {
   });  
 });
 </script>
-</body>
+</html>
