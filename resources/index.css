@@ -22,7 +22,7 @@ p {
 }
 p1 {
     text-align: center;
-    font-size: 30pt;
+    font-size: 20pt;
     font-family: "normal";
      color: hsl(244, 29%, 20%);
      display: flex;
@@ -103,9 +103,20 @@ body {
 
 
 section {
-        background-color: azure;
+        background-image: url(scroll.png);
         margin: 20px;
-        padding: 10px;
+        padding: 40px;
         overflow: auto;
-        height: 300px;
+        height: 200px;
+        width: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
  }
+ section::-webkit-scrollbar {
+    display: none;
+}
+section {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

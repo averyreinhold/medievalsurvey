@@ -33,7 +33,17 @@
   margin: 1px;
   padding: 1px;
 }
+.grid {
+overflow-y: scroll;
+}
 
+.grid::-webkit-scrollbar {
+    display: none;
+}
+.grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
 </style>
 </head>
 
@@ -49,12 +59,6 @@
 <img src="resources/sun.png">
 </div>
     </header>
-   
- <div class="list">
-<div><img src="resources/scroll.png"></div>
-<div><img src="resources/scroll.png"></div>
-<div><img src="resources/scroll.png"></div>
-</div>
 
    <div class="grid">
    
@@ -103,5 +107,8 @@ fetch(url)
   });
 </script>
 
+<footer>
+  <p>kerjgbker</p>
+</footer>
 </body>
 </html>
