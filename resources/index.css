@@ -20,6 +20,14 @@ p {
     font-family: "normal";
     color: hsl(244, 29%, 20%);
 }
+p1 {
+    text-align: center;
+    font-size: 10pt;
+    font-family: "normal";
+     color: hsl(244, 29%, 20%);
+     display: flex;
+     flex-direction: column;
+}
 h2 {
    text-align: center;
     font-size: 25pt;
@@ -68,6 +76,14 @@ div {
     justify-content: space-evenly;
 }
 
+.sun img {
+position: absolute;
+top: 0px;
+left: 0px;
+height: 51%;
+width: auto;
+
+}
 body {
     background-color: bisque;
     border: 20px solid rgb(224, 160, 22) ;
@@ -76,6 +92,7 @@ body {
 
 .grid {
     display: block;
+    justify-content: space-evenly;
 }
 
 .list {

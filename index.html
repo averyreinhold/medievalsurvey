@@ -34,6 +34,22 @@
   padding: 1px;
 }
 
+.grid {
+  margin-top: -40px;
+  margin-bottom: -40px;
+
+}
+
+.grid div {
+  margin: 1px;
+  padding: 1px;
+}
+.sun {
+  position: absolute
+  top 0px
+  left 0px;
+}
+
 </style>
 </head>
 
@@ -45,47 +61,63 @@
   <div><h2><li><a href="about.html"> about </a></li></h2></div>
   <div><h2><li><a href="https://forms.gle/9YfR8ChGazNHtASKA">submit</a></li></h2></div></ul>
 </div>
+<div class="sun">
+<img src="resources/sun.png">
+</div>
     </header>
    
-    
-<p>fkjhkerhgujr</p>
  <div class="list">
 <div><img src="resources/scroll.png"></div>
 <div><img src="resources/scroll.png"></div>
 <div><img src="resources/scroll.png"></div>
 </div>
 
-<div class="grid">
+   <div class="grid">
+   
 
+
+<!-- ****************************************************************************
+Below is javascript for connecting your google sheet to autopopulate the HTML-->
+
+<script>
+const SPREADSHEET_ID = "1eP_tLqVJM-TC4T7fHyqZfg4qVa3XoMpZtlfBlIfTY8Q";
+const TAB_NAME = "Sheet1";
+
+const url = `https://opensheet.elk.sh/${SPREADSHEET_ID}/${TAB_NAME}`;
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response failed");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Loaded data:", data);
+
+    const grid = document.querySelector(".grid");
+
+    data.forEach(entry => {
+      const section = document.createElement("section");
+      section.innerHTML = `
+      <p1>${entry.title} ${entry.first} ${entry.last}</p1>
+      <p1>${entry.plagueinfestedrats}</p1>
+      <p1>${entry.punishking}</p1>
+      <p1>${entry.pillagingvikings}</p1>
+      <p1>${entry.faminefood}</p1>
+      <p1>${entry.revoltleader}</p1>
+      <p1>${entry.kingneighbors}</p1>
+      <p1>${entry.crops}</p1>
+      <p1>${entry.ill}</p1>
+      <p1>${entry.knights}</p1>
+      `;
+      grid.appendChild(section);
+    });
+  })
+  .catch(error => {
+    console.error("Sheet failed to load:", error);
+  });
+</script>
 </div>
 </body>
-<script>
-
-    var SPREADSHEET_ID = "1eP_tLqVJM-TC4T7fHyqZfg4qVa3XoMpZtlfBlIfTY8Q"; //<-- put spreadsheet ID from URL here
-    var TAB_NAME = "Sheet1"; // Make sure it has the correct sheet name from bottom of webpage
-
-
-$(document).ready(function () {
-  $.getJSON("https://opensheet.elk.sh/" + SPREADSHEET_ID + "/" + TAB_NAME, function (data) {
-    
-    console.log(data); 
-    
-  
-    data.forEach(function (entry, index) {
-      
-      console.log(entry);
-      //replace header1, header2, etc. with the column names from your google sheet
-      $(`<section> 
-            <p>` + first + `</p>
-            <p>` + last + `</p>
-            <p>` + entry.pillagingvikings + `</p>
-            <p>` + entry.faminefood + `</p>
-            <p>` + entry.revoltleader + `</p>
-            <p>` + entry.kingneighbors + `</p>
-         </section>`)
-        .appendTo(".grid");
-    });
-  });  
-});
-</script>
 </html>
