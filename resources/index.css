@@ -92,6 +92,14 @@ height: 51%;
 width: auto;
 
 }
+.corner img {
+position: absolute;
+top: 0px;
+right: 0px;
+height: 60%;
+width: auto;
+
+}
 body {
     background-color: bisque;
     border: 20px solid rgb(224, 160, 22) ;
