@@ -9,9 +9,13 @@
 
 h1 {
     text-align: center;
-    font-size: 40pt;
+    font-size: 45pt;
     font-family: "titlefont";
     color: hsl(244, 29%, 20%);
+}
+
+h3 {
+    color: blue;
 }
 
 p {
@@ -27,6 +31,8 @@ p1 {
      color: hsl(244, 29%, 20%);
      display: flex;
      flex-direction: column;
+     margin-left: 7px;
+     margin-right: 7px;
 }
 p2 {
    text-align: center;
@@ -35,6 +41,14 @@ p2 {
     color: hsl(244, 29%, 20%); 
     margin-top: -10px;
     margin-bottom: -10px;
+}
+p3 {
+    text-align: center;
+    align-content: center;
+    font-size: 30pt;
+    font-family: "normal";
+    color: hsl(244, 29%, 20%);
+    margin: 10px; 
 }
 h2 {
    text-align: center;
@@ -137,13 +151,17 @@ section {
   scrollbar-width: none;
 }
 .aboutgrid {
-  background-image: url(scroll.png);
-        margin: 20px;
-        padding: 40px;
-        height: 300px;
-        width: 300px;
-    background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center;
-      
+  background-image: url(scrollabout.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 700px;
+  height: 700px;
+align-content: center;
+text-align: center;
+padding-left: 120px;
+padding-right: 120px;  
+margin: auto;
+margin-top: -150px;
 }
+
