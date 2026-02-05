@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en" class="">
+
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>⚔️</title>
+     <link rel="stylesheet" href="./resources/index.css">
+     <style>
+
+.container {
+  margin-top: -40px;
+  margin-bottom: -40px;
+  display: flex;
+  flex-direction: row;
+  background-color: bisque;
+}
+
+.container div {
+  margin: 1px;
+  padding: 1px;
+  font-size: 30px;
+}
+
+.list {
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
+}
+
+.list div{ 
+  margin: 1px;
+  padding: 1px;
+}
+.grid {
+overflow-y: scroll;
+}
+
+.grid::-webkit-scrollbar {
+    display: none;
+}
+.grid {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+</style>
+</head>
+
+<body>
+    <header>
+        <h1>My Medieval Life</h1>
+        <div class="container">
+  <ul><div><h2><li><a href="index.html">home</a></li></h2></div>
+  <div><h2><li><a href="about.html"> about </a></li></h2></div>
+  <div><h2><li><a href="https://forms.gle/9YfR8ChGazNHtASKA">submit</a></li></h2></div></ul>
+</div>
+<div class="sun">
+<img src="resources/sun.png">
+</div>
+<div class="corner">
+<img src="resources/corner.png">
+</div>
+    </header>
+    <body>
+      <div class="qtitle"><h2>There are plague infested rats inside of your cottage. The Lord of the Land is not helping you deal with these pests. <br>How do you convince the Lord of the Land to help fix your rat problem?</h2></div>
+      <div class="grid1">
+   
+</div>
+
+<!-- ****************************************************************************
+Below is javascript for connecting your google sheet to autopopulate the HTML-->
+
+<script>
+const SPREADSHEET_ID = "1eP_tLqVJM-TC4T7fHyqZfg4qVa3XoMpZtlfBlIfTY8Q";
+const TAB_NAME = "Sheet1";
+
+const url = `https://opensheet.elk.sh/${SPREADSHEET_ID}/${TAB_NAME}`;
+
+fetch(url)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error("Network response failed");
+    }
+    return response.json();
+  })
+  .then(data => {
+    console.log("Loaded data:", data);
+
+    const grid = document.querySelector(".grid1");
+
+    data.forEach(entry => {
+      const section = document.createElement("section");
+      section.innerHTML = `
+      <p1>${entry.plagueinfestedrats}</p1>
+      `;
+       if(!entry.plagueinfestedrats || entry.plagueinfestedrats.trim() == "") return;
+      grid.appendChild(section);
+    });
+  })
+  .catch(error => {
+    console.error("Sheet failed to load:", error);
+  });
+
+</script>
+    </body>
+    </html>

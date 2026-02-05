@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: "titlefont";
     src: url(deigratia/DeiGrat.ttf);
@@ -13,9 +14,11 @@ h1 {
     font-family: "titlefont";
     color: hsl(244, 29%, 20%);
 }
-
-h3 {
-    color: blue;
+h2 {
+    text-align: center;
+    font-size: 30pt;
+    font-family: "normal";
+    color: hsl(244, 29%, 20%);
 }
 
 p {
@@ -49,6 +52,20 @@ p3 {
     font-family: "normal";
     color: hsl(244, 29%, 20%);
     margin: 10px; 
+}
+p4 {
+      text-align: center;
+    align-content: center;
+    font-size: 15pt;
+    font-family: "normal";
+    color: hsl(244, 29%, 20%);
+}
+p5 {
+      text-align: center;
+    align-content: center;
+    font-size: 16pt;
+    font-family: "normal";
+    color: hsl(244, 29%, 20%);
 }
 h2 {
    text-align: center;
@@ -119,19 +136,26 @@ body {
     border: 20px solid rgb(224, 160, 22) ;
     border-style: groove;
 }
-.grid {
+
+.answerscroll {
+  background-image: url(scrolltext.png);
+        margin: auto;
+        margin-top: 50px;
+        margin-bottom: 50px;
+        height: 400px;
+        width: 900px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+}
+
+.grid1 {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     margin: auto;
     text-align: center;
-    padding: 50px;
+    padding: 60px;
 }
-
-.list {
-    justify-content: space-evenly
-    }
-
-
 section {
         background-image: url(scroll.png);
         margin: 20px;
@@ -142,8 +166,14 @@ section {
         background-size: contain;
         background-repeat: no-repeat;
         background-position: center;
- }
- section::-webkit-scrollbar {
+}
+
+.list {
+    justify-content: space-evenly
+    }
+
+
+section::-webkit-scrollbar {
     display: none;
 }
 section {
@@ -165,3 +195,32 @@ margin: auto;
 margin-top: -150px;
 }
 
+.questgrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin: auto;
+    text-align: center;
+    padding: 50px;
+}
+
+.titlescroll {
+        background-image: url(scroll.png);
+        margin: 20px;
+        padding: 50px;
+        height: 200px;
+        width: 200px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-position: center;
+        transition: transform .2s;
+}
+.titlescroll:hover {
+  -ms-transform: scale(1.05); /* IE 9 */
+  -webkit-transform: scale(1.05); /* Safari 3-8 */
+  transform: scale(1.05); 
+}
+.qtitle {
+    padding-left: 100px;
+    padding-right: 100px;
+    margin-bottom: -50px;
+}
